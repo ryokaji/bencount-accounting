@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: uv run",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/.venv/bin/fava",
+            "args": [
+                "household/main.bean",
+            ],
+            "python": ".venv/bin/python",
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "fengkx.beancount-lsp-client",
+        "gruntfuggly.triggertaskonsave",
+        "ms-python.debugpy"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "bean-check",
+            "type": "shell",
+            // このタスクは、 bean-check の突合結果を Problems へ通知する。
+            // このタスクの終了後は常に terminal を閉じたいため、 presentation.close: true とする。
+            // ただし command 実行時に exit code != 0 のときは、 Notifications でエラー通知され、
+            // かつ terminal がハングアップする。そのため、常に exit code = 0 を返すこととする。
+            "command": "uv run bean-check household/main.bean || true",
+            "problemMatcher": [
+                {
+                    "owner": "beancount",
+                    "fileLocation": [
+                        "absolute",
+                    ],
+                    "source": "uv",
+                    "pattern": {
+                        "regexp": "^(.*\\.bean):(\\d+):\\s(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "message": 3
+                    },
+                }
+            ],
+            "presentation": {
+                "close": true,
+                "reveal": "never",
+                "clear": true
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
