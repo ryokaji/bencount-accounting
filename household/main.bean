@@ -1,0 +1,6 @@
+option "title" "家計簿"
+option "operating_currency" "JPY"
+
+include "accounts.bean"
+include "2026/00_opening.bean"
+include "2026/99_closing.bean"
